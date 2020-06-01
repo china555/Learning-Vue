@@ -3,8 +3,8 @@
     <div class="box">
       <div class="headddd">login</div>
       <div class="login_option">
-        <a @click="email">Email</a>
-        <a @click="phone">Phone</a>
+        <button @click="email">Email</button>
+        <button @click="phone">Mobile Number</button>
       </div>
       <div class="space">
         <div class="inputtext">{{check}}</div>
@@ -14,7 +14,13 @@
           <input placeholder="*********" type="text" />
         </div>
         <div v-else>
-          <input placeholder="+66123456789" type="text" />
+          <select class="select_option" name id>
+            <option value>+66</option>
+            <option value>+98</option>
+            <option value>+76</option>
+            <option value>+56</option>
+          </select>
+          <input placeholder="Enter Mobile Number" type="text" />
         </div>
       </div>
       <div>
@@ -33,7 +39,7 @@ export default {
       this.check = "Email";
     },
     phone: function() {
-      this.check = "Phone Number";
+      this.check = "Mobile Number";
     },
     submit: function() {
       alert("submit already");
@@ -42,6 +48,22 @@ export default {
 };
 </script>
 <style scoped>
+*:focus {
+  outline: none;
+}
+.select_option {
+  font-size: 20px;
+  margin-right: 10px;
+  background-color: inherit;
+  color: aliceblue;
+  padding: 10px 20px 10px 0;
+  text-align: left;
+  border-radius: 5px;
+}
+.select_option > option {
+  background-color: #1a1717;
+  color: white;
+}
 .btn {
   width: 70%;
   border-radius: 5px;
@@ -66,16 +88,19 @@ export default {
   background-color: rgb(255, 255, 255);
 }
 input {
-  width: 80%;
+  width: calc(60% + 20px);
   padding: 10px;
   font-size: 20px;
   border-radius: 9px;
+  background-color: #1a1717;
+  color: aliceblue;
+  border: solid 1px #6c6969;
 }
 .box {
   width: 40%;
   flex-wrap: wrap;
   border-radius: 7px;
-  background-color: rgba(0, 0, 0, 0.83);
+  background-color: #1a1717;
   justify-content: center;
   padding: 10px;
 }
@@ -85,16 +110,18 @@ input {
   color: aliceblue;
   font-size: 30px;
 }
-.login_option > a {
+.login_option > button {
+  font-size: 20px;
+  border: none;
+  background-color: inherit;
   color: aliceblue;
   text-decoration: none;
   margin: 20px;
 }
-.login_option > a:hover {
+.login_option > button:hover {
   cursor: pointer;
-  color: rgb(5, 16, 49);
 }
-.login_option > a:active {
+.login_option > button:focus {
   border-bottom: 3px solid red;
 }
 .login_option {
