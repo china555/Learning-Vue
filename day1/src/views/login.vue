@@ -9,8 +9,10 @@
       <div class="space">
         <div class="inputtext">{{check}}</div>
         <input type="text" />
-        <div class="inputtext">Password</div>
-        <input type="text" />
+        <div v-if="check === 'Email'">
+          <div class="inputtext">Password</div>
+          <input type="text" />
+        </div>
       </div>
       <div>
         <button @click="submit" class="btn">submit</button>
@@ -77,6 +79,9 @@ input {
 .login_option > a:hover {
   cursor: pointer;
   color: rgb(5, 16, 49);
+}
+.login_option > a:active {
+  border-bottom-color: rgb(255, 13, 13);
 }
 .login_option {
   margin-top: 20px;
