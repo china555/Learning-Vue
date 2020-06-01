@@ -8,14 +8,17 @@
       </div>
       <div class="space">
         <div class="inputtext">{{check}}</div>
-        <input type="text" />
         <div v-if="check === 'Email'">
+          <input placeholder="example@gmail.com" type="text" />
           <div class="inputtext">Password</div>
-          <input type="text" />
+          <input placeholder="*********" type="text" />
+        </div>
+        <div v-else>
+          <input placeholder="+66123456789" type="text" />
         </div>
       </div>
       <div>
-        <button @click="submit" class="btn">submit</button>
+        <button @click="submit" class="btn">Continue</button>
       </div>
     </div>
   </div>
@@ -40,14 +43,20 @@ export default {
 </script>
 <style scoped>
 .btn {
+  width: 70%;
   border-radius: 5px;
+  padding: 20px;
+  border: none;
+  background-color: rgba(251, 3, 3, 0.932);
+  color: aliceblue;
+  font-weight: 500;
 }
 .space {
   margin: 30px 0;
 }
 .inputtext {
   text-align: left;
-  margin: 30px 0 10px 15%;
+  margin: 30px 0 10px 10%;
   color: aliceblue;
 }
 .container {
@@ -57,16 +66,21 @@ export default {
   background-color: rgb(255, 255, 255);
 }
 input {
-  width: 70%;
+  width: 80%;
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 9px;
 }
 .box {
   width: 40%;
   flex-wrap: wrap;
+  border-radius: 7px;
   background-color: rgba(0, 0, 0, 0.83);
   justify-content: center;
   padding: 10px;
 }
 .headddd {
+  margin-top: 30px;
   width: 100%;
   color: aliceblue;
   font-size: 30px;
@@ -81,7 +95,7 @@ input {
   color: rgb(5, 16, 49);
 }
 .login_option > a:active {
-  border-bottom-color: rgb(255, 13, 13);
+  border-bottom: 3px solid red;
 }
 .login_option {
   margin-top: 20px;
