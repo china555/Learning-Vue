@@ -27,6 +27,7 @@ export default {
   padding: 10px 3%;
   width: 100%;
   background-color: white;
+  justify-content: space-between;
 }
 input {
   font-size: 20px;

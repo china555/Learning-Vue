@@ -2,10 +2,14 @@
   <div class="container">
     <ul class="deco">
       <li>
-        <router-link to>Hello</router-link>
+        <router-link to="Hello">Hello</router-link>
       </li>
-      <li>World</li>
-      <li>Hello2</li>
+      <li>
+        <router-link to="Hello2">Hello2</router-link>
+      </li>
+      <li>
+        <router-link to="Hello3">Hello3</router-link>
+      </li>
     </ul>
   </div>
 </template>

@@ -1,7 +1,12 @@
 <template>
-  <div class="container">
-    <nav2 />
-    <sidebar />
+  <div>
+    <div class="container2">
+      <nav2 />
+    </div>
+    <div class="container">
+      <sidebar />
+      <router-view />
+    </div>
   </div>
 </template>
 <script>
@@ -27,6 +32,10 @@ body {
   margin: 0;
 }
 .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
