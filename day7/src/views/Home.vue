@@ -13,7 +13,7 @@
         <todoListCard :todoName="todo" :todoDate="date" />
       </div>
     </div>
-    <div style="width:100%" v-if="this.$store.state.todoList.length != 0">
+    <div class="container2" style="width:100%" v-if="this.$store.state.todoList.length != 0">
       <div style="width:50%" class="container">
         <todoListCard
           :todoName="todoName"
@@ -24,6 +24,17 @@
           <div class="close" @click="remove(index)">X</div>
         </todoListCard>
       </div>
+      <div style="width:50%" class="container">
+        <div class="list">
+          <todoListList
+            :todoName="todoName"
+            :index = "index"
+            :todoDate="todoDate"
+            v-for="({todoName,todoDate},index) in this.$store.state.todoList "
+            :key="`-${index}`"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -31,13 +42,15 @@
 <script>
 // @ is an alias to /src
 import todoListCard from "@/components/todoList_card.vue";
+import todoListList from "@/components/todoList_list.vue";
 
 export default {
   data() {
     return { todo: "", date: "" };
   },
   components: {
-    todoListCard
+    todoListCard,
+    todoListList
   },
   methods: {
     add: function() {
@@ -61,6 +74,11 @@ export default {
 };
 </script>
 <style  scoped>
+.container2 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
 * {
   border: none;
 }
@@ -74,6 +92,14 @@ export default {
 }
 .close:hover {
   background-color: rgba(240, 248, 255, 0.646);
+}
+.list {
+  width: 100%;
+  background-color: rgba(44, 45, 45, 0.585);
+  border-radius: 7px;
+  margin-right: 20px;
+  margin-top: 13px;
+  word-wrap: break-word;
 }
 .example {
   margin-top: 20px;
