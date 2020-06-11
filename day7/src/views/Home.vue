@@ -1,13 +1,19 @@
 <template>
-  <div class="space">
-    <div class="text">
+  <div class="container">
+    <div class="space">
       Todo:
       <input type="text" v-model="todo" />
       Date:
       <input type="date" v-model="date" />
       <button @click="add" class="btn">Enter</button>
     </div>
-    <todoListCard />
+    <div style="width:100%">
+      <div class="example">Example ToDo Card</div>
+      <todoListCard :todoName="todo" :todoDate="date" />
+    </div>
+    <div style="width:50%">
+      <todoListCard :todoName="todo" :todoDate="date" />
+    </div>
   </div>
 </template>
 
@@ -31,7 +37,14 @@ export default {
 * {
   border: none;
 }
+.example {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: aliceblue;
+}
 .btn {
+  padding: 2px 15px;
   color: black;
   border-radius: 5cm;
   margin-left: 2vw;
@@ -45,8 +58,8 @@ input {
 }
 .space {
   margin: 10px;
-}
-.text {
+  width: 100%;
   color: aliceblue;
+  text-align: center;
 }
 </style>

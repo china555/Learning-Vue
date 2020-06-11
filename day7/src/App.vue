@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div >
     <div class="titletext">TODO LIST</div>
     <router-view />
   </div>
@@ -20,6 +20,7 @@ body {
   background-color: #3d5ca5;
 }
 .container {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
