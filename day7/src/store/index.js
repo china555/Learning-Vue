@@ -18,10 +18,8 @@ export default new Vuex.Store({
       // } = payload
       state.todoList.push(payload.todo)
     },
-    removeTodoList(state, {
-      payload
-    }) {
-      state.todoList.splice(payload, 1);
+    removeTodoList(state, payload) {
+      state.todoList.splice(payload.index, 1);
     }
   },
   actions: {},

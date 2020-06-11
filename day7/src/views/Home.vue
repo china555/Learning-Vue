@@ -21,7 +21,7 @@
           v-for="({todoName,todoDate},index) in this.$store.state.todoList "
           :key="`-${index}`"
         >
-          <div class="close" @click="remove">X</div>
+          <div class="close" @click="remove(index)">X</div>
         </todoListCard>
       </div>
     </div>
@@ -54,7 +54,7 @@ export default {
     remove: function(index) {
       this.$store.commit({
         type: "removeTodoList",
-        position: index
+        index: index
       });
     }
   }
