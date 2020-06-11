@@ -9,12 +9,19 @@
     </div>
     <div style="width:100%">
       <div class="example">Example ToDo Card</div>
-      <todoListCard :todoName="todo" :todoDate="date" />
+      <div class="container">
+        <todoListCard :todoName="todo" :todoDate="date" />
+      </div>
     </div>
     <div style="width:100%" v-if="this.$store.state.todoList.length != 0">
-      <div style="width:50%">
-        <todoListCard v-for="">
-          <div class="close">X</div>
+      <div style="width:50%" class="container">
+        <todoListCard
+          :todoName="todoName"
+          :todoDate="todoDate"
+          v-for="({todoName,todoDate},index) in this.$store.state.todoList "
+          :key="`-${index}`"
+        >
+          <div class="close" @click="remove">X</div>
         </todoListCard>
       </div>
     </div>
@@ -41,6 +48,8 @@ export default {
           todoDate: this.date
         }
       });
+      this.todo = "";
+      this.date = "";
     },
     remove: function(index) {
       this.$store.commit({
