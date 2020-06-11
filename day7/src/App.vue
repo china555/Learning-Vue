@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div>
     <div class="titletext">TODO LIST</div>
     <router-view />
   </div>
@@ -18,6 +18,7 @@
 
 body {
   background-color: #3d5ca5;
+  margin: 0;
 }
 .container {
   width: 100%;

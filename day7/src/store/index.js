@@ -16,9 +16,11 @@ export default new Vuex.Store({
       //   todoDate,
       //   tododescription
       // } = payload
-      state.todoList.push(payload)
+      state.todoList.push(payload.todo)
     },
-    removeTodoList(state,{payload}){
+    removeTodoList(state, {
+      payload
+    }) {
       state.todoList.splice(payload, 1);
     }
   },

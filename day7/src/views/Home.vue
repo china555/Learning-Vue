@@ -11,8 +11,12 @@
       <div class="example">Example ToDo Card</div>
       <todoListCard :todoName="todo" :todoDate="date" />
     </div>
-    <div style="width:50%">
-      <todoListCard :todoName="todo" :todoDate="date" />
+    <div style="width:100%" v-if="this.$store.state.todoList.length != 0">
+      <div style="width:50%">
+        <todoListCard v-for="">
+          <div class="close">X</div>
+        </todoListCard>
+      </div>
     </div>
   </div>
 </template>
@@ -29,13 +33,38 @@ export default {
     todoListCard
   },
   methods: {
-    add: function() {}
+    add: function() {
+      this.$store.commit({
+        type: "addTodoList",
+        todo: {
+          todoName: this.todo,
+          todoDate: this.date
+        }
+      });
+    },
+    remove: function(index) {
+      this.$store.commit({
+        type: "removeTodoList",
+        position: index
+      });
+    }
   }
 };
 </script>
 <style  scoped>
 * {
   border: none;
+}
+.close {
+  color: aliceblue;
+  padding: 5px;
+  margin-left: 80%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bolder;
+}
+.close:hover {
+  background-color: rgba(240, 248, 255, 0.646);
 }
 .example {
   margin-top: 20px;
