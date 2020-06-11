@@ -11,7 +11,7 @@ export default {
   props: {
     todoName: String,
     todoDate: String,
-    index: String
+    index: Number
   }
 };
 </script>
