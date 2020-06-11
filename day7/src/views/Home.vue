@@ -40,8 +40,13 @@ export default {
 input {
   font-size: 20px;
   color: black;
+  background-color: rgba(240, 248, 255, 0.646);
+  outline: none;
 }
 .space {
   margin: 10px;
+}
+.text {
+  color: aliceblue;
 }
 </style>
