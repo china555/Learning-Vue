@@ -5,7 +5,7 @@
       <input type="text" v-model="todo" />
       Date:
       <input type="date" v-model="date" />
-      <button @click="add" class="btn">Enter</button>
+      <button @click="add" @keyup.enter="add" class="btn">Enter</button>
     </div>
     <div style="width:100%">
       <div class="example">Example ToDo Card</div>
@@ -28,7 +28,7 @@
         <div class="list">
           <todoListList
             :todoName="todoName"
-            :index = "index"
+            :index="index"
             :todoDate="todoDate"
             v-for="({todoName,todoDate},index) in this.$store.state.todoList "
             :key="`-${index}`"
