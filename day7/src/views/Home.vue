@@ -16,9 +16,10 @@
     <div class="container2" style="width:100%" v-if="this.$store.state.todoList.length != 0">
       <div style="width:50%" class="container">
         <todoListCard
+          :color="color"
           :todoName="todoName"
           :todoDate="todoDate"
-          v-for="({todoName,todoDate},index) in this.$store.state.todoList "
+          v-for="({todoName,todoDate,color},index) in this.$store.state.todoList "
           :key="`-${index}`"
         >
           <div class="close" @click="remove(index)">X</div>
@@ -43,7 +44,7 @@
 // @ is an alias to /src
 import todoListCard from "@/components/todoList_card.vue";
 import todoListList from "@/components/todoList_list.vue";
-
+import randomColor from "@/Javascript/random_color";
 export default {
   data() {
     return { todo: "", date: "" };
@@ -58,7 +59,8 @@ export default {
         type: "addTodoList",
         todo: {
           todoName: this.todo,
-          todoDate: this.date
+          todoDate: this.date,
+          color: randomColor()
         }
       });
       this.todo = "";

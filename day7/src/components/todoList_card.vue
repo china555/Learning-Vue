@@ -1,5 +1,5 @@
 <template>
-  <div class="card" :style="{backgroundColor:getRandomColor}">
+  <div class="card" :style="{backgroundColor:color}">
     <slot />
     <div class="text">
       <div>Todo : {{todoName}}</div>
@@ -11,17 +11,8 @@
 export default {
   props: {
     todoName: String,
-    todoDate: String
-  },
-  computed: {
-    getRandomColor: function() {
-      var letters = "0123456789ABCDEF";
-      var color = "#";
-      for (var i = 0; i < 6; i++) {
-        color += letters[Math.floor(Math.random() * 16)];
-      }
-      return color;
-    }
+    todoDate: String,
+    color: String
   }
 };
 </script>
