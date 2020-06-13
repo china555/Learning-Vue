@@ -93,7 +93,7 @@ export default {
   font-weight: bolder;
 }
 .close:hover {
-  background-color: rgba(240, 248, 255, 0.646);
+  background-color: rgba(98, 101, 105, 0.646);
 }
 .list {
   width: 100%;
