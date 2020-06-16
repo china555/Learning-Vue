@@ -16,7 +16,7 @@ export default {
   }
 };
 </script>
-<style  scoped>
+<style  >
 .text {
   padding: 20px 50px;
 }
