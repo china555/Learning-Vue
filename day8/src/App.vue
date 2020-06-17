@@ -5,7 +5,7 @@
       <router-link to="/about">About</router-link>|
       <router-link to="/joke">Joke</router-link>
     </div>
-    <router-view />
+      <router-view />
   </div>
 </template>
 
@@ -16,6 +16,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #nav {

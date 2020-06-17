@@ -1,8 +1,8 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import Joke from "@/components/card.vue";
-
+import Joke from "@/views/card.vue";
+import detailJoke from "@/views/SeeDetail.vue";
 Vue.use(VueRouter);
 
 const routes = [
@@ -24,6 +24,11 @@ const routes = [
     path: "/joke",
     name: "Joke",
     component: Joke,
+  },
+  {
+    path: "/joke/detail/:id",
+    name: "detail",
+    component: detailJoke,
   },
 ];
 
